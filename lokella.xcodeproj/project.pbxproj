@@ -7,19 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		836E4DBD26768CAD00B75DCD /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E4DBC26768CAD00B75DCD /* MenuController.swift */; };
+		836E4DBF26768EF000B75DCD /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E4DBE26768EF000B75DCD /* Business.swift */; };
+		83A1BCC5267532A300928AD4 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A1BCC4267532A300928AD4 /* HttpRequest.swift */; };
+		83A1BCC8267532F300928AD4 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A1BCC7267532F300928AD4 /* BaseModel.swift */; };
+		83A1BCCA2675330000928AD4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A1BCC92675330000928AD4 /* Constants.swift */; };
+		83A1BCCC2675336100928AD4 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A1BCCB2675336100928AD4 /* Customer.swift */; };
+		83A1BCCE2675369E00928AD4 /* JsonResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A1BCCD2675369E00928AD4 /* JsonResult.swift */; };
+		83A1BCD026753B3300928AD4 /* GenericWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A1BCCF26753B3300928AD4 /* GenericWrapper.swift */; };
+		83A1BCD226753F7700928AD4 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A1BCD126753F7700928AD4 /* DateFormatter.swift */; };
+		83A1BCD42675490200928AD4 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A1BCD32675490200928AD4 /* DataStore.swift */; };
+		83A4F10726769ADF009C9CE2 /* CategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A4F10626769ADF009C9CE2 /* CategoriesCollectionViewCell.swift */; };
+		83A4F10B26769FF2009C9CE2 /* MenuCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A4F10A26769FF2009C9CE2 /* MenuCategory.swift */; };
 		83E88E7F26714A6300FA43CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E88E7E26714A6300FA43CE /* AppDelegate.swift */; };
-		83E88E8126714A6300FA43CE /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E88E8026714A6300FA43CE /* FirstViewController.swift */; };
-		83E88E8326714A6300FA43CE /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E88E8226714A6300FA43CE /* SecondViewController.swift */; };
+		83E88E8126714A6300FA43CE /* CustomerLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E88E8026714A6300FA43CE /* CustomerLoginController.swift */; };
+		83E88E8326714A6300FA43CE /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E88E8226714A6300FA43CE /* ScannerViewController.swift */; };
 		83E88E8626714A6300FA43CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83E88E8426714A6300FA43CE /* Main.storyboard */; };
 		83E88E8826714A6600FA43CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83E88E8726714A6600FA43CE /* Assets.xcassets */; };
 		83E88E8B26714A6600FA43CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83E88E8926714A6600FA43CE /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		836E4DBC26768CAD00B75DCD /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		836E4DBE26768EF000B75DCD /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		83A1BCC4267532A300928AD4 /* HttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
+		83A1BCC7267532F300928AD4 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		83A1BCC92675330000928AD4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		83A1BCCB2675336100928AD4 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		83A1BCCD2675369E00928AD4 /* JsonResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonResult.swift; sourceTree = "<group>"; };
+		83A1BCCF26753B3300928AD4 /* GenericWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericWrapper.swift; sourceTree = "<group>"; };
+		83A1BCD126753F7700928AD4 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		83A1BCD32675490200928AD4 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		83A4F10626769ADF009C9CE2 /* CategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
+		83A4F10A26769FF2009C9CE2 /* MenuCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCategory.swift; sourceTree = "<group>"; };
 		83E88E7B26714A6300FA43CE /* lokella.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lokella.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83E88E7E26714A6300FA43CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		83E88E8026714A6300FA43CE /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		83E88E8226714A6300FA43CE /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		83E88E8026714A6300FA43CE /* CustomerLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerLoginController.swift; sourceTree = "<group>"; };
+		83E88E8226714A6300FA43CE /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		83E88E8526714A6300FA43CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		83E88E8726714A6600FA43CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83E88E8A26714A6600FA43CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +61,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		83A1BCC32675326B00928AD4 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				83A1BCC4267532A300928AD4 /* HttpRequest.swift */,
+				83A1BCC92675330000928AD4 /* Constants.swift */,
+				83A1BCCD2675369E00928AD4 /* JsonResult.swift */,
+				83A1BCCF26753B3300928AD4 /* GenericWrapper.swift */,
+				83A1BCD126753F7700928AD4 /* DateFormatter.swift */,
+				83A1BCD32675490200928AD4 /* DataStore.swift */,
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
+		83A1BCC6267532E400928AD4 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				83A1BCC7267532F300928AD4 /* BaseModel.swift */,
+				83A1BCCB2675336100928AD4 /* Customer.swift */,
+				836E4DBE26768EF000B75DCD /* Business.swift */,
+				83A4F10A26769FF2009C9CE2 /* MenuCategory.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
 		83E88E7226714A6300FA43CE = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +104,17 @@
 		83E88E7D26714A6300FA43CE /* lokella */ = {
 			isa = PBXGroup;
 			children = (
+				83A1BCC6267532E400928AD4 /* models */,
+				83A1BCC32675326B00928AD4 /* helpers */,
 				83E88E7E26714A6300FA43CE /* AppDelegate.swift */,
-				83E88E8026714A6300FA43CE /* FirstViewController.swift */,
-				83E88E8226714A6300FA43CE /* SecondViewController.swift */,
+				83E88E8026714A6300FA43CE /* CustomerLoginController.swift */,
+				83E88E8226714A6300FA43CE /* ScannerViewController.swift */,
 				83E88E8426714A6300FA43CE /* Main.storyboard */,
 				83E88E8726714A6600FA43CE /* Assets.xcassets */,
 				83E88E8926714A6600FA43CE /* LaunchScreen.storyboard */,
 				83E88E8C26714A6600FA43CE /* Info.plist */,
+				836E4DBC26768CAD00B75DCD /* MenuController.swift */,
+				83A4F10626769ADF009C9CE2 /* CategoriesCollectionViewCell.swift */,
 			);
 			path = lokella;
 			sourceTree = "<group>";
@@ -138,9 +190,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83E88E8326714A6300FA43CE /* SecondViewController.swift in Sources */,
+				83A4F10B26769FF2009C9CE2 /* MenuCategory.swift in Sources */,
+				836E4DBF26768EF000B75DCD /* Business.swift in Sources */,
+				83E88E8326714A6300FA43CE /* ScannerViewController.swift in Sources */,
+				83A1BCCC2675336100928AD4 /* Customer.swift in Sources */,
+				83A1BCC5267532A300928AD4 /* HttpRequest.swift in Sources */,
 				83E88E7F26714A6300FA43CE /* AppDelegate.swift in Sources */,
-				83E88E8126714A6300FA43CE /* FirstViewController.swift in Sources */,
+				836E4DBD26768CAD00B75DCD /* MenuController.swift in Sources */,
+				83A1BCD42675490200928AD4 /* DataStore.swift in Sources */,
+				83A1BCD226753F7700928AD4 /* DateFormatter.swift in Sources */,
+				83A4F10726769ADF009C9CE2 /* CategoriesCollectionViewCell.swift in Sources */,
+				83A1BCCE2675369E00928AD4 /* JsonResult.swift in Sources */,
+				83A1BCD026753B3300928AD4 /* GenericWrapper.swift in Sources */,
+				83E88E8126714A6300FA43CE /* CustomerLoginController.swift in Sources */,
+				83A1BCC8267532F300928AD4 /* BaseModel.swift in Sources */,
+				83A1BCCA2675330000928AD4 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +352,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = lokella/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -295,7 +360,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.keplersegg.lokella;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -305,6 +370,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = lokella/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +378,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.keplersegg.lokella;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -41,6 +41,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        // Determine who sent the URL.
+        let sendingAppID = options[.sourceApplication]
+        print("source application = \(sendingAppID ?? "Unknown")")
+        
+        // Process the URL.
+        guard let components = NSURLComponents(url: url, resolvingAgainstBaseURL: true),
+            let path = components.path,
+            let params = components.queryItems else {
+                print("Invalid URL or path missing")
+                return false
+        }
+        
+        if let parameter = params.first(where: { $0.name == "code" })?.value {
+            print("path = \(path)")
+            print("parameter = \(parameter)")
+            
+            if (parameter == UIDevice.current.identifierForVendor!.uuidString) {
+                
+                DataStore.SetIsCustomerVerified(isVerified: true);
+            }
+            
+            return true
+        } else {
+            print("parameter is missing")
+            return false
+        }
+    }
 }
 
