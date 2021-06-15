@@ -30,11 +30,25 @@ class MenuController: UIViewController, UICollectionViewDataSource, UICollection
             data: nil,
             cbSuccess: CallbackSuccessGetBusiness,
             cbError: CallbackError);
+        
+        
+        HttpRequest.send(
+            url: "Menu/Items/category/3/",
+            method: "GET",
+            data: nil,
+            cbSuccess: CallbackSuccessGetMenuItems,
+            cbError: CallbackError);
     }
     
     func CallbackError(statusCode:Int, message: String)
     {
-        
+        print(message);
+    }
+    
+    
+    func CallbackSuccessGetMenuItems(result:[MenuItemTo])
+    {
+        print(result.count);
     }
     
     func CallbackSuccessGetBusiness(result:Business)
