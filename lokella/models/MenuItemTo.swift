@@ -28,6 +28,8 @@ class MenuItemTo : BaseModel, Codable
         self.init()
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
+        Item = try container.decode(MenuItem.self, forKey: .Item)
+        
         let pricesArray = try container.decode([MenuItemPrice].self, forKey: .Prices)
         pricesArray.forEach{ Prices.append($0) }
         
