@@ -13,6 +13,7 @@
 		830256462678E2D900925623 /* CatalogMenuItemTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830256452678E2D900925623 /* CatalogMenuItemTag.swift */; };
 		830256482678E36400925623 /* MenuItemPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830256472678E36400925623 /* MenuItemPrice.swift */; };
 		8302564A2678E4C700925623 /* MenuItemTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830256492678E4C700925623 /* MenuItemTo.swift */; };
+		8326E757267BE45000F399F3 /* CatalogAllergyAdditive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8326E756267BE45000F399F3 /* CatalogAllergyAdditive.swift */; };
 		836E4DBD26768CAD00B75DCD /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E4DBC26768CAD00B75DCD /* MenuController.swift */; };
 		836E4DBF26768EF000B75DCD /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E4DBE26768EF000B75DCD /* Business.swift */; };
 		837125AC2679486500698C5C /* PriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837125AB2679486500698C5C /* PriceCell.swift */; };
@@ -28,6 +29,8 @@
 		83A1BCD42675490200928AD4 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A1BCD32675490200928AD4 /* DataStore.swift */; };
 		83A4F10726769ADF009C9CE2 /* CategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A4F10626769ADF009C9CE2 /* CategoriesCollectionViewCell.swift */; };
 		83A4F10B26769FF2009C9CE2 /* MenuCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A4F10A26769FF2009C9CE2 /* MenuCategory.swift */; };
+		83DC7A26267A2B8E0037A3F2 /* ExtensionsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DC7A25267A2B8E0037A3F2 /* ExtensionsUIView.swift */; };
+		83DC7A28267B85D90037A3F2 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DC7A27267B85D90037A3F2 /* TagCell.swift */; };
 		83E88E7F26714A6300FA43CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E88E7E26714A6300FA43CE /* AppDelegate.swift */; };
 		83E88E8126714A6300FA43CE /* CustomerLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E88E8026714A6300FA43CE /* CustomerLoginController.swift */; };
 		83E88E8326714A6300FA43CE /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E88E8226714A6300FA43CE /* ScannerViewController.swift */; };
@@ -43,6 +46,7 @@
 		830256452678E2D900925623 /* CatalogMenuItemTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogMenuItemTag.swift; sourceTree = "<group>"; };
 		830256472678E36400925623 /* MenuItemPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemPrice.swift; sourceTree = "<group>"; };
 		830256492678E4C700925623 /* MenuItemTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTo.swift; sourceTree = "<group>"; };
+		8326E756267BE45000F399F3 /* CatalogAllergyAdditive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogAllergyAdditive.swift; sourceTree = "<group>"; };
 		836E4DBC26768CAD00B75DCD /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		836E4DBE26768EF000B75DCD /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		837125AB2679486500698C5C /* PriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceCell.swift; sourceTree = "<group>"; };
@@ -58,6 +62,8 @@
 		83A1BCD32675490200928AD4 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		83A4F10626769ADF009C9CE2 /* CategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
 		83A4F10A26769FF2009C9CE2 /* MenuCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCategory.swift; sourceTree = "<group>"; };
+		83DC7A25267A2B8E0037A3F2 /* ExtensionsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsUIView.swift; sourceTree = "<group>"; };
+		83DC7A27267B85D90037A3F2 /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
 		83E88E7B26714A6300FA43CE /* lokella.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lokella.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83E88E7E26714A6300FA43CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83E88E8026714A6300FA43CE /* CustomerLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerLoginController.swift; sourceTree = "<group>"; };
@@ -89,6 +95,7 @@
 				83A1BCD126753F7700928AD4 /* DateFormatter.swift */,
 				83A1BCD32675490200928AD4 /* DataStore.swift */,
 				8380A24B26794BC9005572B7 /* ExtensionsDecimal.swift */,
+				83DC7A25267A2B8E0037A3F2 /* ExtensionsUIView.swift */,
 			);
 			path = helpers;
 			sourceTree = "<group>";
@@ -106,6 +113,7 @@
 				830256452678E2D900925623 /* CatalogMenuItemTag.swift */,
 				830256472678E36400925623 /* MenuItemPrice.swift */,
 				830256492678E4C700925623 /* MenuItemTo.swift */,
+				8326E756267BE45000F399F3 /* CatalogAllergyAdditive.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -142,6 +150,7 @@
 				83A4F10626769ADF009C9CE2 /* CategoriesCollectionViewCell.swift */,
 				838C4724267937A7002CF9BF /* MenuItemCell.swift */,
 				837125AB2679486500698C5C /* PriceCell.swift */,
+				83DC7A27267B85D90037A3F2 /* TagCell.swift */,
 			);
 			path = lokella;
 			sourceTree = "<group>";
@@ -172,6 +181,9 @@
 		83E88E7326714A6300FA43CE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					MenuItemTags,
+				);
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = Kelpersegg;
@@ -225,11 +237,13 @@
 				83A1BCCC2675336100928AD4 /* Customer.swift in Sources */,
 				83A1BCC5267532A300928AD4 /* HttpRequest.swift in Sources */,
 				83E88E7F26714A6300FA43CE /* AppDelegate.swift in Sources */,
+				83DC7A28267B85D90037A3F2 /* TagCell.swift in Sources */,
 				836E4DBD26768CAD00B75DCD /* MenuController.swift in Sources */,
 				830256422678E22F00925623 /* CatalogAdditive.swift in Sources */,
 				83A1BCD42675490200928AD4 /* DataStore.swift in Sources */,
 				830256482678E36400925623 /* MenuItemPrice.swift in Sources */,
 				83A1BCD226753F7700928AD4 /* DateFormatter.swift in Sources */,
+				83DC7A26267A2B8E0037A3F2 /* ExtensionsUIView.swift in Sources */,
 				830256462678E2D900925623 /* CatalogMenuItemTag.swift in Sources */,
 				838C4725267937A7002CF9BF /* MenuItemCell.swift in Sources */,
 				830256442678E2A600925623 /* CatalogAllergy.swift in Sources */,
@@ -240,6 +254,7 @@
 				83E88E8126714A6300FA43CE /* CustomerLoginController.swift in Sources */,
 				830256402678E13E00925623 /* MenuItem.swift in Sources */,
 				83A1BCC8267532F300928AD4 /* BaseModel.swift in Sources */,
+				8326E757267BE45000F399F3 /* CatalogAllergyAdditive.swift in Sources */,
 				83A1BCCA2675330000928AD4 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

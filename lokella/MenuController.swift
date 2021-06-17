@@ -105,9 +105,23 @@ class MenuController: UIViewController, UICollectionViewDataSource, UICollection
             // get a reference to our storyboard cell
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifierMenuItem, for: indexPath as IndexPath) as! MenuItemCell
             
-            cell.item = self.menuItems![indexPath.row];
-            cell.lblName.text = self.menuItems![indexPath.row].Item.Name
-            cell.lblDescription.text = self.menuItems![indexPath.row].Item.Description
+            //cell.addDashedBorder();
+            
+            let item = self.menuItems![indexPath.row];
+            cell.item = item;
+            let itemName = item.Item.Name
+            let additives = " " + item.getAdditivesAllergiesSummary()
+            
+            let font:UIFont? = UIFont(name: "Helvetica", size:15)
+            let fontSuper:UIFont? = UIFont(name: "Helvetica", size:11)
+            let attString:NSMutableAttributedString = NSMutableAttributedString(string: itemName + additives, attributes: [.font:font!])
+            attString.setAttributes([.font:fontSuper!,.baselineOffset:8], range: NSRange(location:itemName.count,length:additives.count))
+            cell.lblName.attributedText = attString
+            
+            cell.lblDescription.text = item.Item.Description
+            if (item.Item.Description.count == 0) {
+                cell.stkView.removeArrangedSubview(cell.lblDescription);
+            }
             cell.lstPrices.reloadData();
             
             return cell

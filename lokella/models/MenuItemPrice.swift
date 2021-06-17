@@ -51,4 +51,27 @@ class MenuItemPrice : BaseModel, Codable
             "Price": self.Price
         ]
     }
+    
+    func toString() -> String {
+
+        var text = "";
+        
+        if (self.Quantity != nil) {
+            text += self.Quantity!.formattedAmount ?? "";
+            text += " ";
+        }
+        
+        if (self.Unit != nil) {
+            text += self.Unit!;
+            text += " ";
+        }
+        
+        if (text.count > 0) {
+            text += "| ";
+        }
+        
+        text += self.Price.formattedAmount ?? "";
+        
+        return text;
+    }
 }
