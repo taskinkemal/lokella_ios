@@ -20,7 +20,24 @@ class MenuController: UIViewController, UICollectionViewDataSource, UICollection
     
     var categories: [MenuCategory]? = nil
     var menuItems: [MenuItemTo]? = nil
-    
+    func GetMenuItemSections() -> [String] {
+        
+        var list: [String] = [];
+        
+        if (self.menuItems == nil) {
+            return list;
+        }
+        
+        for item in self.menuItems! {
+            if (list.count == 0) {
+                list.append(item.Category.Name);
+            } else if (list[list.count-1] != item.Category.Name) {
+                list.append(item.Category.Name);
+            }
+        }
+        
+        return list;
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,7 +100,12 @@ class MenuController: UIViewController, UICollectionViewDataSource, UICollection
         if (collectionView == self.lstCategories) {
             return self.categories?.count ?? 0
         } else {
-            return self.menuItems?.count ?? 0
+            let sectionNames = self.GetMenuItemSections();
+            if (sectionNames.count == 0) {
+                return 0;
+            }
+            let categoryName = sectionNames[section];
+            return self.menuItems?.filter{$0.Category.Name == categoryName}.count ?? 0
         }
     }
     
@@ -96,8 +118,7 @@ class MenuController: UIViewController, UICollectionViewDataSource, UICollection
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifierCategory, for: indexPath as IndexPath) as! CategoriesCollectionViewCell
             
             // Use the outlet in our custom class to get a reference to the UILabel in the cell
-            cell.lblName.text = self.categories![indexPath.row].Name // The row value is the same as the index of the desired text within the array.
-            //cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
+            cell.lblName.text = self.categories![indexPath.row].Name
             
             return cell
         } else {
@@ -106,10 +127,19 @@ class MenuController: UIViewController, UICollectionViewDataSource, UICollection
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifierMenuItem, for: indexPath as IndexPath) as! MenuItemCell
             
             //cell.addDashedBorder();
+            let categories = self.GetMenuItemSections();
+            var cntItemsBefore = 0;
+            for (index, element) in categories.enumerated() {
+                
+                if (index < indexPath.section) {
+                    cntItemsBefore += self.menuItems?.filter{$0.Category.Name == element}.count ?? 0
+                }
+            }
             
-            let item = self.menuItems![indexPath.row];
+            let item = self.menuItems![cntItemsBefore + indexPath.row];
             cell.item = item;
             let itemName = item.Item.Name
+            let description = item.Item.Description
             let additives = " " + item.getAdditivesAllergiesSummary()
             
             let font:UIFont? = UIFont(name: "Helvetica", size:15)
@@ -118,13 +148,62 @@ class MenuController: UIViewController, UICollectionViewDataSource, UICollection
             attString.setAttributes([.font:fontSuper!,.baselineOffset:8], range: NSRange(location:itemName.count,length:additives.count))
             cell.lblName.attributedText = attString
             
-            cell.lblDescription.text = item.Item.Description
+            cell.lblDescription.text = description
             if (item.Item.Description.count == 0) {
-                cell.stkView.removeArrangedSubview(cell.lblDescription);
+            //    cell.stkView.removeArrangedSubview(cell.lblDescription);
+            //    cell.lblDescription.text = "test"
             }
+            
+            
             cell.lstPrices.reloadData();
             
             return cell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                                 viewForSupplementaryElementOfKind kind: String,
+                                 at indexPath: IndexPath) -> UICollectionReusableView {
+      // 1
+      switch kind {
+      // 2
+      case UICollectionView.elementKindSectionHeader:
+        
+        
+        if (collectionView == self.lstMenuItems) {
+            
+        // 3
+        guard
+          let headerView = collectionView.dequeueReusableSupplementaryView(
+            ofKind: kind,
+            withReuseIdentifier: "\(MenuItemHeaderCell.self)",
+            for: indexPath) as? MenuItemHeaderCell
+          else {
+            fatalError("Invalid view type")
+        }
+
+        if (self.menuItems != nil && self.menuItems!.count > indexPath.row) {
+            let categoryName = self.GetMenuItemSections()[indexPath.section]
+            headerView.lblCategoryName.text = categoryName
+        }
+        return headerView
+        }
+        assert(false, "Invalid element type")
+      default:
+        // 4
+        assert(false, "Invalid element type")
+      }
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int   {
+        
+        if (collectionView == self.lstMenuItems) {
+            let cnt = self.GetMenuItemSections().count;
+            return cnt;
+        }
+        else {
+            return 1
+            
         }
     }
     
@@ -154,8 +233,18 @@ class MenuController: UIViewController, UICollectionViewDataSource, UICollection
             let categoryId = categories![indexPath.item].Id;
             
             fetchMenuItems(categoryId: categoryId);
+            
+            if let cell = collectionView.cellForItem(at: indexPath) as? CategoriesCollectionViewCell {
+                cell.selectCell()
+            }
         } else {
             
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? CategoriesCollectionViewCell {
+            cell.deselectCell()
         }
     }
     

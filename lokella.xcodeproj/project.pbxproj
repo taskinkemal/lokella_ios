@@ -37,6 +37,7 @@
 		83E88E8626714A6300FA43CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83E88E8426714A6300FA43CE /* Main.storyboard */; };
 		83E88E8826714A6600FA43CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83E88E8726714A6600FA43CE /* Assets.xcassets */; };
 		83E88E8B26714A6600FA43CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83E88E8926714A6600FA43CE /* LaunchScreen.storyboard */; };
+		A048DB66267CC35200EC2FBA /* MenuItemHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A048DB65267CC35200EC2FBA /* MenuItemHeaderCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		83E88E8726714A6600FA43CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83E88E8A26714A6600FA43CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83E88E8C26714A6600FA43CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A048DB65267CC35200EC2FBA /* MenuItemHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemHeaderCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 				838C4724267937A7002CF9BF /* MenuItemCell.swift */,
 				837125AB2679486500698C5C /* PriceCell.swift */,
 				83DC7A27267B85D90037A3F2 /* TagCell.swift */,
+				A048DB65267CC35200EC2FBA /* MenuItemHeaderCell.swift */,
 			);
 			path = lokella;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				83A1BCCC2675336100928AD4 /* Customer.swift in Sources */,
 				83A1BCC5267532A300928AD4 /* HttpRequest.swift in Sources */,
 				83E88E7F26714A6300FA43CE /* AppDelegate.swift in Sources */,
+				A048DB66267CC35200EC2FBA /* MenuItemHeaderCell.swift in Sources */,
 				83DC7A28267B85D90037A3F2 /* TagCell.swift in Sources */,
 				836E4DBD26768CAD00B75DCD /* MenuController.swift in Sources */,
 				830256422678E22F00925623 /* CatalogAdditive.swift in Sources */,

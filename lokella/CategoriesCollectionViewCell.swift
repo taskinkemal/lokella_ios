@@ -10,4 +10,16 @@ import UIKit
 class CategoriesCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var lblName: UILabel!
+    
+    func selectCell() {
+        let underlineAttribute = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.thick.rawValue]
+        let underlineAttributedString = NSAttributedString(string: lblName.text!, attributes: underlineAttribute)
+        lblName.attributedText = underlineAttributedString
+    }
+    
+    
+    func deselectCell() {
+        let underlineAttributedString = NSAttributedString(string: lblName.text!)
+        lblName.attributedText = underlineAttributedString
+    }
 }
