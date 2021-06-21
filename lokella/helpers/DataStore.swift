@@ -10,14 +10,24 @@ import Foundation
 
 final class DataStore {
     
-    static func GetCustomer() -> CustomerLogin? {
+    static func GetCustomer() -> Customer? {
         
-        return UserDefaults.standard.object(forKey: "Customer") as? CustomerLogin
+        var userData: Customer!
+                if let data = UserDefaults.standard.value(forKey: "Customer") as? Data {
+                    userData = try? PropertyListDecoder().decode(Customer.self, from: data)
+                    return userData!
+                } else {
+                    return userData
+                }
     }
     
-    static func SetCustomer(customerLogin: CustomerLogin) {
+    static func SetCustomer(customer: Customer?) {
         
-        return UserDefaults.standard.set(customerLogin, forKey: "Customer")
+        if (customer == nil) {
+            UserDefaults.standard.removeObject(forKey: "Customer");
+        } else {
+            UserDefaults.standard.set(try? PropertyListEncoder().encode(customer!), forKey: "Customer");
+        }
     }
     
     static func IsCustomerVerified() -> Bool {
@@ -27,6 +37,6 @@ final class DataStore {
     
     static func SetIsCustomerVerified(isVerified: Bool) {
         
-        return UserDefaults.standard.set(isVerified, forKey: "IsCustomerVerified");
+        UserDefaults.standard.set(isVerified, forKey: "IsCustomerVerified");
     }
 }

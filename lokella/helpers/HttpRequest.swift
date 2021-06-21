@@ -96,7 +96,7 @@ final class HttpRequest
             
             
             let decoder = JSONDecoder();
-            decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full);
+            decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601DateOnly);
             //let result = try? decoder.decode(T.self, from: data!);
             do {
                 let result = try decoder.decode(T.self, from: data!);

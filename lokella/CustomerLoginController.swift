@@ -22,6 +22,14 @@ class CustomerLoginController: UIViewController {
         btnSubmit.addTarget(self, action: #selector(CustomerLoginController.btnSubmitClicked(_:)), for: .touchUpInside)
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if (DataStore.GetCustomer() != nil /* && DataStore.IsCustomerVerified() */) {
+            
+                self.performSegue(withIdentifier: "sgLogin", sender: nil);
+        }
+    }
+    
     @objc func btnSubmitClicked(_ sender: UIButton) {
         // your code goes here
         
@@ -31,7 +39,7 @@ class CustomerLoginController: UIViewController {
         let phoneNumber = txtPhoneNumber.text!;
         let deviceId = UIDevice.current.identifierForVendor!.uuidString;
         
-        let customer = CustomerLogin.init(
+        let customer = Customer.init(
             Email: email,
             FirstName: firstName,
             LastName: lastName,
@@ -39,7 +47,7 @@ class CustomerLoginController: UIViewController {
             DeviceId: deviceId);
         
         DataStore.SetIsCustomerVerified(isVerified: false);
-        DataStore.SetCustomer(customerLogin: customer);
+        DataStore.SetCustomer(customer: customer);
         
         HttpRequest.send(
             url: "Customers",
@@ -47,8 +55,6 @@ class CustomerLoginController: UIViewController {
             data: customer,
             cbSuccess: CallbackSuccessPostUser,
             cbError: CallbackError);
-        
-
     }
     
     func CallbackError(statusCode:Int, message: String)
@@ -58,11 +64,16 @@ class CustomerLoginController: UIViewController {
     
     func CallbackSuccessPostUser(result:JsonResult<Int>)
     {
-        let alert = UIAlertController(title: "Alert", message: "Welcome " + String(result.value), preferredStyle: .alert)
+        DispatchQueue.main.sync {
+            self.performSegue(withIdentifier: "sgLogin", sender: nil);
+        }
+        
+        /*
+        let alert = UIAlertController(title: "Alert", message: "Welcome " + String(result.Value), preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             switch action.style{
             case .default:
-                print("default")
+
                 
             case .cancel:
                 print("cancel")
@@ -72,7 +83,8 @@ class CustomerLoginController: UIViewController {
                 
             }
         }))
-        self.present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil);
+        */
     }
 
 }

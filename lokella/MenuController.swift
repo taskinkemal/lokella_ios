@@ -20,6 +20,7 @@ class MenuController: UIViewController, UICollectionViewDataSource, UICollection
     
     var categories: [MenuCategory]? = nil
     var menuItems: [MenuItemTo]? = nil
+    var business: Business? = nil;
     func GetMenuItemSections() -> [String] {
         
         var list: [String] = [];
@@ -41,8 +42,9 @@ class MenuController: UIViewController, UICollectionViewDataSource, UICollection
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //lstMenuItems.backgroundColor = UIColor.blue
+
+        lstCategories.backgroundColor = nil;
+        lstMenuItems.backgroundColor = nil;
 
         HttpRequest.send(
             url: "Businesses/" + "LokellaBusinessId_1",
@@ -60,6 +62,7 @@ class MenuController: UIViewController, UICollectionViewDataSource, UICollection
     func CallbackSuccessGetMenuItems(result:[MenuItemTo])
     {
         DispatchQueue.main.sync {
+            
             self.menuItems = result;
             lstMenuItems.reloadData();
         }
@@ -67,9 +70,13 @@ class MenuController: UIViewController, UICollectionViewDataSource, UICollection
     
     func CallbackSuccessGetBusiness(result:Business)
     {
+        self.business = result;
         let url = URL(string: Constants.serviceEndpoint + "Files/" + String(result.LogoId));
         let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
         DispatchQueue.main.sync {
+            
+            self.view.backgroundColor = UIColorExtensions.fromHex(hex: result.BackgroundColor);
+            lblName.textColor = UIColorExtensions.fromHex(hex: result.FontColor);
             lblName.text = result.Name
             imgLogo2.image = UIImage(data: data!)
         }
@@ -80,6 +87,19 @@ class MenuController: UIViewController, UICollectionViewDataSource, UICollection
             data: nil,
             cbSuccess: CallbackSuccessGetCategories,
             cbError: CallbackError);
+        
+        
+        HttpRequest.send(
+            url: "SpecialOffers/" + String(result.Id),
+            method: "GET",
+            data: nil,
+            cbSuccess: CallbackSuccessGetSpecialOffers,
+            cbError: CallbackError);
+    }
+    
+    func CallbackSuccessGetSpecialOffers(result:[SpecialOffer])
+    {
+        print(result[0].DateFrom);
     }
     
     func CallbackSuccessGetCategories(result:[MenuCategory])
@@ -118,6 +138,7 @@ class MenuController: UIViewController, UICollectionViewDataSource, UICollection
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifierCategory, for: indexPath as IndexPath) as! CategoriesCollectionViewCell
             
             // Use the outlet in our custom class to get a reference to the UILabel in the cell
+            cell.lblName.textColor = UIColorExtensions.fromHex(hex: business!.FontColor);
             cell.lblName.text = self.categories![indexPath.row].Name
             
             return cell
@@ -140,6 +161,11 @@ class MenuController: UIViewController, UICollectionViewDataSource, UICollection
             cell.item = item;
             let itemName = item.Item.Name
             let description = item.Item.Description
+            cell.lblName.textColor = UIColorExtensions.fromHex(hex: business!.FontColor);
+            cell.lblDescription.textColor = UIColorExtensions.fromHex(hex: business!.FontColor);
+            cell.lstPrices.backgroundColor = nil;
+            cell.lstTags.backgroundColor = nil;
+            cell.fontColor = business!.FontColor;
             let additives = " " + item.getAdditivesAllergiesSummary()
             
             let font:UIFont? = UIFont(name: "Helvetica", size:15)
@@ -149,12 +175,7 @@ class MenuController: UIViewController, UICollectionViewDataSource, UICollection
             cell.lblName.attributedText = attString
             
             cell.lblDescription.text = description
-            if (item.Item.Description.count == 0) {
-            //    cell.stkView.removeArrangedSubview(cell.lblDescription);
-            //    cell.lblDescription.text = "test"
-            }
-            
-            
+ 
             cell.lstPrices.reloadData();
             
             return cell
@@ -184,6 +205,7 @@ class MenuController: UIViewController, UICollectionViewDataSource, UICollection
 
         if (self.menuItems != nil && self.menuItems!.count > indexPath.row) {
             let categoryName = self.GetMenuItemSections()[indexPath.section]
+            headerView.lblCategoryName.textColor = UIColorExtensions.fromHex(hex: business!.MenuSectionColor);
             headerView.lblCategoryName.text = categoryName
         }
         return headerView

@@ -10,6 +10,7 @@ import UIKit
 class MenuItemCell: UICollectionViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     var item: MenuItemTo? = nil;
+    var fontColor: String = "";
     
     @IBOutlet weak var stkView: UIStackView!
     @IBOutlet weak var lblName: UILabel!
@@ -38,6 +39,7 @@ class MenuItemCell: UICollectionViewCell, UICollectionViewDataSource, UICollecti
             
             let price = self.item!.Prices[indexPath.row];
             
+            cell.lblPrice.textColor = UIColorExtensions.fromHex(hex: self.fontColor);
             cell.lblPrice.text = price.toString();
             
             return cell

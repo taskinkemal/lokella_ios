@@ -15,7 +15,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+
+        if DataStore.GetCustomer() == nil{
+            let loginScreen = storyBoard.instantiateViewController(withIdentifier: "CustomerLoginController")
+            self.window?.rootViewController = loginScreen
+
+        }else{
+            let mainScreen = storyBoard.instantiateViewController(withIdentifier: "MainTabBarController")
+            self.window?.rootViewController = mainScreen
+        }
+        
         return true
     }
 
