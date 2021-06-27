@@ -93,6 +93,27 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     
     func found(code: String) {
         print(code)
+        
+        let customer = DataStore.GetCustomer();
+        
+        if (customer != nil) {
+            
+            HttpRequest.send(
+                url: "Businesses/" + code + "/Customer/" + String(customer!.Id),
+                method: "GET",
+                data: nil,
+                cbSuccess: CallbackSuccessPostQRCode,
+                cbError: CallbackError);
+        }
+    }
+    
+    func CallbackError(statusCode:Int, message: String)
+    {
+
+    }
+    
+    func CallbackSuccessPostQRCode(result:Business)
+    {
     }
     
     override var prefersStatusBarHidden: Bool {

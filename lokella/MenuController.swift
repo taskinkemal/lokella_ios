@@ -10,10 +10,11 @@ import UIKit
 
 class MenuController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
-    @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var imgLogo2: UIImageView!
     @IBOutlet weak var lstCategories: UICollectionView!
     @IBOutlet weak var lstMenuItems: UICollectionView!
+    @IBOutlet weak var imgSpecialOffer: UIImageView!
+    @IBOutlet weak var vContent: UIView!
     
     let cellIdentifierCategory = "categoryCell";
     let cellIdentifierMenuItem = "menuItemCell";
@@ -52,6 +53,21 @@ class MenuController: UIViewController, UICollectionViewDataSource, UICollection
             data: nil,
             cbSuccess: CallbackSuccessGetBusiness,
             cbError: CallbackError);
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imgSpecialOfferTapped(tapGestureRecognizer:)))
+        imgSpecialOffer.isUserInteractionEnabled = true
+        imgSpecialOffer.addGestureRecognizer(tapGestureRecognizer)
+        
+    }
+    
+    @IBAction func unwind( _ seg: UIStoryboardSegue) {
+        
+    }
+    
+    @objc func imgSpecialOfferTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        self.performSegue(withIdentifier: "sgShowSpecialOffers", sender: nil);
+        // Your action
     }
     
     func CallbackError(statusCode:Int, message: String)
@@ -76,8 +92,7 @@ class MenuController: UIViewController, UICollectionViewDataSource, UICollection
         DispatchQueue.main.sync {
             
             self.view.backgroundColor = UIColorExtensions.fromHex(hex: result.BackgroundColor);
-            lblName.textColor = UIColorExtensions.fromHex(hex: result.FontColor);
-            lblName.text = result.Name
+            vContent.backgroundColor = UIColorExtensions.fromHex(hex: result.BackgroundColor);
             imgLogo2.image = UIImage(data: data!)
         }
         
@@ -248,7 +263,6 @@ class MenuController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
-        print("You selected cell #\(indexPath.item)!");
         
         if (collectionView == self.lstCategories) {
             
